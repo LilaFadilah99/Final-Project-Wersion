@@ -23,6 +23,7 @@ function thankYou() {
             <div className="col-md-6 col-12 mt-md-0 mt-3">
                 <p>Sementara itu mengapa Anda tidak mengecek media sosial kami dan testimonial klien kami yang sebenarnya untuk menunjukkan mengapa merek memilih untuk bekerja sama dengan kami. Atau kunjungi halaman tim kami untuk melihat wajah di balik email.</p>
             </div>
+            
         </div>
       </div>
     </div>
