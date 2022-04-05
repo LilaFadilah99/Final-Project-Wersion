@@ -1,0 +1,35 @@
+#descriptionProductsButton {
+    width: 200px;
+    height: 50px;
+    border: none;
+    margin: 10px;
+    border-radius: 30px;
+    background-color: #fdba12;
+    transition: 0.3s ease;
+    cursor: pointer;
+  }
+  
+  #descriptionProductsButton:hover {
+    background-color: #f3950d;
+  }
+
+  @media (min-width: 767px) {
+    #CompanyDescription img {
+        margin-top: -220px;
+    }
+    #CompanyDescription {
+        margin-top: 150px;
+    }
+  }
+
+  #visi img {
+      width: 400px;
+      height: auto;
+  }
+
+  @media (max-width: 767px) {
+    #timAhliTitle br {
+      display: none;
+    }
+  }
+

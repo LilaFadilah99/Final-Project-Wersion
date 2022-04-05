@@ -1,0 +1,103 @@
+
+
+/* hero */
+#heroButton {
+    width: 200px;
+    height: 50px;
+    border: none;
+    margin: 10px;
+    border-radius: 30px;
+    background-color: #fdba12;
+    transition: 0.3s ease;
+    cursor: pointer;
+  }
+  
+  #heroButton:hover {
+    background-color: #f3950d;
+  }
+  
+  /* Home */
+  .banner_wrapper {
+    padding-top: 10px;
+  }
+  #home img {
+    padding-top: 1rem;
+  }
+  @media (max-width: 767px) {
+    #home br {
+    display: none;
+      }
+  }
+
+  /* brand */
+  #imageBrand {
+    width: 60em;
+    height: auto;
+  }
+
+  /* Why Join Us */
+  #services img {
+    width: 4em;
+    height: auto;
+  }
+
+  /* Busines Card */
+  #businesSection svg {
+    margin-top: 200px;
+  }
+  #businesSection {
+    margin-top: -200px;
+  } 
+  #businesCard img {
+    width: 80px;
+    height: auto;
+  }
+  @media (min-width: 768px) {
+    #businesContainerFluid {
+      margin-top: -100px;
+    }
+    #heroDescription {
+      margin-top: -3000px;
+    }
+  }
+  #businesCard img {
+    width: 80px;
+    height: auto;
+  }
+
+  /* Detail */
+  #detailButton {
+    width: 200px;
+    height: 50px;
+    border: none;
+    margin: 10px;
+    border-radius: 30px;
+    background-color: #fdba12;
+    transition: 0.3s ease;
+    cursor: pointer;
+  }
+  #detailButton:hover {
+    background-color: #f3950d;
+  }
+  #detailImage{
+    width: 300px;
+    height: auto;
+  }
+  #detail svg {
+    margin-top: -50px;
+  }
+  @media (max-width: 767px) {
+    #detailImage {
+      display: none;
+    }
+  }
+
+  /* Our Team */
+  #ourTeam img {
+    width: 70px;
+    height: auto;
+  }
+
+ 
+    
+   

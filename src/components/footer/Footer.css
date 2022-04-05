@@ -1,0 +1,59 @@
+ /* Footer */
+ #footer2 img {
+    width: 70px;
+    height: auto;
+  }
+  #footerLogo a {
+    color: #000000;
+    text-decoration: none;
+  }
+  #footerLogo a:hover {
+    text-decoration: underline;
+  }
+  #socialMedia i {
+    font-size: 30px;
+    color: black;
+  }
+  #socialMedia i:hover {
+    color: #fdba12;
+    text-decoration: none;
+  }
+  #socialMedia a {
+    text-decoration: none;
+  }
+  @media (max-width: 767px) {
+    #footer2 img {
+      margin-left: 80px;
+    }
+    #footer2 {
+      margin-top: 130px;
+    }
+    #footerLogo {
+      margin-bottom: 25px;
+      text-decoration: none;
+    }
+    #footerLogo a {
+      margin-bottom: 25px;
+      text-decoration: none;
+    }
+     #ourTeam {
+       margin-top: 20px;
+       
+     }
+  }
+
+   /* Make Great */
+ #greatButton {
+  width: 200px;
+  height: 50px;
+  border: none;
+  margin: 10px;
+  border-radius: 30px;
+  background-color: #fdba12;
+  transition: 0.3s ease;
+  cursor: pointer;
+  }
+  
+  #greatButton:hover {
+  background-color: #f3950d;
+  }

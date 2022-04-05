@@ -1,0 +1,22 @@
+/* style Navbar */
+#navButton {
+    width: 100px;
+    height: 40px;
+    border: none;
+    margin: 10px;
+    border-radius: 30px;
+    background-color: #fdba12;
+    transition: 0.3s ease;
+    cursor: pointer;
+    }
+    
+    #navButton:hover {
+    background-color: #f3950d;
+    }
+  
+    #navbarNav a {
+      color: black;
+    }
+    #navbarNav a:hover {
+      color: #fdba12;
+    }

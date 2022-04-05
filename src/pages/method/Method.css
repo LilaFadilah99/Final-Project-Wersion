@@ -1,0 +1,77 @@
+/* stage 1 */
+#methodButton1 {
+    width: 200px;
+    height: 50px;
+    border: none;
+    margin: 10px;
+    border-radius: 30px;
+    background-color: #fdba12;
+    transition: 0.3s ease;
+    cursor: pointer;
+  }
+  
+  #methodButton1:hover {
+    background-color: #f3950d;
+  }
+
+  /* stage 2 */
+#methodButton2 {
+    width: 200px;
+    height: 50px;
+    border: none;
+    margin: 10px;
+    border-radius: 30px;
+    background-color: #fdba12;
+    transition: 0.3s ease;
+    cursor: pointer;
+  }
+  
+  #methodButton2:hover {
+    background-color: #f3950d;
+  }
+
+  /* stage 3 */
+#methodButton3 {
+    width: 200px;
+    height: 50px;
+    border: none;
+    margin: 10px;
+    border-radius: 30px;
+    background-color: #fdba12;
+    transition: 0.3s ease;
+    cursor: pointer;
+  }
+  
+  #methodButton3:hover {
+    background-color: #f3950d;
+  }
+  /* stage 4 */
+#methodButton4 {
+    width: 200px;
+    height: 50px;
+    border: none;
+    margin: 10px;
+    border-radius: 30px;
+    background-color: #fdba12;
+    transition: 0.3s ease;
+    cursor: pointer;
+  }
+  
+  #methodButton4:hover {
+    background-color: #f3950d;
+  }
+  /* stage 5 */
+#methodButton5 {
+    width: 200px;
+    height: 50px;
+    border: none;
+    margin: 10px;
+    border-radius: 30px;
+    background-color: #fdba12;
+    transition: 0.3s ease;
+    cursor: pointer;
+  }
+  
+  #methodButton5:hover {
+    background-color: #f3950d;
+  }
