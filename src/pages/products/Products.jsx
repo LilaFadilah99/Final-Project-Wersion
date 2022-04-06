@@ -4,6 +4,7 @@ import Navbar from '../../components/navbar/Navbar'
 // import Products1 from '../../assets/products/products1.avif'
 import Footer from '../../components/footer/Footer'
 import DetailContack from '../../components/detailContack/DetailContack'
+import { Navigate } from 'react-router-dom'
 
 function Products() {
   const [products, setProducts] = useState([])
@@ -12,6 +13,10 @@ function Products() {
     .then(response => response.json())
     .then(data => setProducts(data))
     .catch(err => console.log(err))
+  }
+
+  function cardClick(title) {
+    // console.log(`card ${title} di klik`)
   }
 
   useEffect(()=> {
@@ -40,7 +45,7 @@ function Products() {
           <div className="row justify-content-center ">
           {
             products.map(products => {
-              return <div className="mb-3 col-md-3 col-6" key={products.id}>
+              return <div className="mb-3 col-md-3 col-6" key={products.id} onClick={() => cardClick(products.title)} >
               <div className="card h-100 rounded-2">
                 <img src={products.image} className="card-img-top" alt="paket 1" />
                 <div className="card-body">
