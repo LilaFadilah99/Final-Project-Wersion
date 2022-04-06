@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './Home.css';
 import Navbar from '../../components/navbar/Navbar'
 import Footer from '../../components/footer/Footer';
@@ -25,6 +25,18 @@ import Logo from '../../assets/logo.png'
 import { useNavigate } from 'react-router-dom'
 
 function Home() {
+  const [whyJoinUs, setWhyJoinUs] = useState([])
+  async function fetchWhyJoinUs() {
+    fetch('https://pickled-capricious-beak.glitch.me/join')
+    .then(response => response.json())
+    .then(data => setWhyJoinUs(data))
+    .catch(err => console.log(err))
+  }
+
+  useEffect(() => {
+    fetchWhyJoinUs()
+  },[])
+
   let navigate = useNavigate();
   return (
     <>
@@ -134,7 +146,7 @@ function Home() {
    </section>
       {/* End Trusted */}
 
-      {/* Services */}
+      {/* why join us */}
       <section id="whyJoinUs" className="about_wrapper">
     <div className="container-fluid">
       <div className="container py-sm-3 py-md-5">
@@ -150,47 +162,22 @@ function Home() {
   <section id="services" className="services_wrapper">
     <div className="container-fluid">
         <div className="row">
-            <div className="col-lg-3 col-md-6 col-sm-12">
-                <div className="card bg-white border-0 rounded-0 text-center">
+        {
+              whyJoinUs.map(whyJoinUs => {
+                return <div className="col-lg-3 col-md-6 col-sm-12">
+                <div className="card bg-white border-0 rounded-0 text-center" key={whyJoinUs.id}>
                     <div className="card-body">
-                        <img src={Service1} alt="service" className="img-fluid mb-5"/>
-                        <h3>Tim Creator Handal</h3>
-                        <p>Dikerjakan oleh tim yang ahli di berbagai bidang, seperti industri makanan, teknologi, layanan & jasa.</p>
+                        <img src={whyJoinUs.image} alt="service" className="img-fluid mb-5"/>
+                        <p>{whyJoinUs.description}</p>
                     </div>
                 </div>
             </div>
-            <div className="col-lg-3 col-md-6 mb-4 col-sm-12">
-                <div className="card bg-white border-0 rounded-0 text-center">
-                    <div className="card-body">
-                        <img src={Service2} alt="service" className="img-fluid mb-5"/>
-                        <h3>Data Aman</h3>
-                        <p>Seluruh data pelanggan akan dikelola secara aman dan dilindungi secara ketat.</p>
-                    </div>
-                </div>
-            </div>
-            <div className="col-lg-3 col-md-6 mb-4 col-sm-12">
-                <div className="card bg-white border-0 rounded-0 text-center">
-                    <div className="card-body">
-                        <img src={Service3} alt="service" className="img-fluid mb-5"/>
-                        <h3>
-                          Mengurangi biaya</h3>
-                        <p>Harga yang kami tawarkan disesuaikan dengan kebutuhan dan kemampuan masing-masing klien.</p>
-                    </div>
-                </div>
-            </div>
-            <div className="col-lg-3 col-md-6 mb-4 col-sm-12">
-                <div className="card bg-white border-0 rounded-0 text-center">
-                    <div className="card-body">
-                        <img src={Service4} alt="service" className="img-fluid mb-5"/>
-                        <h3>CS Support</h3>
-                        <p>Dengan dukungan sistem pemesanan yang aktif 24 jam seminggu, mudah dan otomatis.</p>
-                    </div>
-                </div>
-            </div>
+              })
+            }
         </div>  
     </div>
     </section>
-      {/* End Services  */}
+      {/* End why join us  */}
 
       {/* Card Business Section */}
       <section id="businesSection">

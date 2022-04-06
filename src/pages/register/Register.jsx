@@ -48,6 +48,10 @@ function Register() {
                       <small class="text-danger d-none">Please input your name</small>
                     </div>
 
+                  <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="showPassword" />
+                    <label class="form-check-label" for="showPassword">Show password</label>
+                  </div>
                     <div class="mb-3">
                       <label for="email" class="form-label">
                         E-mail
