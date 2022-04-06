@@ -1,4 +1,4 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 import '../login/Login.css'
 // import LoginPict from '../../assets/Login/login.png'
 import LoginPict from '../../assets/Home/hero-bg.png'
@@ -63,8 +63,8 @@ function Login() {
                             </form>
 
                             <div className="mt-4">
-                                <p className=" mb-0">Don't have an account?<a href="register.html"
-                                        className="text-primary text-decoration-none"> Register here</a></p>
+                                <p className=" mb-0">Don't have an account?<Link to="/register"
+                                        className="text-primary text-decoration-none"> Register here</Link></p>
                             </div>
                         </div>
                     </div>

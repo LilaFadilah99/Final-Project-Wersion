@@ -10,6 +10,7 @@ import DetailProducts from './pages/detailProducts/DetailProducts';
 import Login from './pages/login/Login';
 import Register from './pages/register/Register';
 import ThankYou from './pages/thankYou/ThankYou';
+import BuyProducts from './pages/buyProducts/BuyProducts';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/thanks" element={<ThankYou />} />
+        <Route path="/buy" element={<BuyProducts />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </>

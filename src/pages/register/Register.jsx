@@ -1,4 +1,4 @@
-import React from 'react'
+import {Link} from 'react-router-dom'
 import '../register/Register.css'
 import LoginPict from '../../assets/Home/hero-bg.png'
 
@@ -72,12 +72,12 @@ function Register() {
                   </div>
 
                   <div class="d-grid col-12 mt-md-4 mt-4">
-                    <button type="submit" class="btn">Sign Up</button>
+                    <button type="submit" class="btn"  style={{backgroundColor: "#fdba12"}}>Sign Up</button>
                   </div>
                 </form>
 
                 <div class="mt-4">
-                  <p class="mb-0">Already have an account? <a href="./login.html" class="text-primary text-decoration-none">Login</a></p>
+                  <p class="mb-0">Already have an account? <Link to="/login" class="text-primary text-decoration-none">Login</Link></p>
                 </div>
               </div>
             </div>
