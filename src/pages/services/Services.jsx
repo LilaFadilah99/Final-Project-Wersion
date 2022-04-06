@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import '../../pages/services/Services.css'
 import Navbar from '../../components/navbar/Navbar'
 import Service1 from '../../assets/Service/service1.jpg'
@@ -8,6 +8,16 @@ import { useNavigate } from 'react-router-dom'
 
 
 function Services() {
+  const [services, setServices] = useState([])
+  async function fetchServices() {
+    fetch('https://pickled-capricious-beak.glitch.me/services')
+    .then(response => response.json())
+    .then(data => setServices(data))
+    .catch(err => console.log(err))
+  }
+   useEffect(() => {
+     fetchServices()
+   },[])
   let navigate = useNavigate();
   return (
     <>
@@ -31,79 +41,17 @@ function Services() {
       <div className="container">
         {/* Row 1 */}
         <div className="row text-start">
-          {/* card 1 */}
-          <div className="col-md-4 col-12 mt-2 px-md-5" >
-          <button className='border-0 bg-transparent text-start' onClick={() => {navigate ('/detail');}}>
-          <img src={Service1} alt="" className='img-fluid' />
-          <h3 className='mt-5'>Web Design</h3>
-          <p>Situs web adalah alat pemasaran merek yang paling penting. Itu dapat memberikan konten yang beragam, ke khalayak luas dalam waktu singkat.</p>
-          </button>    
-          </div>
-          {/* card 2 */}
-          <div className="col-md-4 col-12 mt-2 px-md-5" >
-          <button className='border-0 bg-transparent text-start' onClick={() => {navigate ('/detail');}}>
-          <img src={Service1} alt="" className='img-fluid' />
-          <h3 className='mt-5'>Web Design</h3>
-          <p>Situs web adalah alat pemasaran merek yang paling penting. Itu dapat memberikan konten yang beragam, ke khalayak luas dalam waktu singkat.</p>
-          </button>    
-          </div>
-          {/* card 3 */}
-          <div className="col-md-4 col-12 mt-2 px-md-5" >
-          <button className='border-0 bg-transparent text-start' onClick={() => {navigate ('/detail');}}>
-          <img src={Service1} alt="" className='img-fluid' />
-          <h3 className='mt-5'>Web Design</h3>
-          <p>Situs web adalah alat pemasaran merek yang paling penting. Itu dapat memberikan konten yang beragam, ke khalayak luas dalam waktu singkat.</p>
-          </button>    
-          </div>
-          {/* card 4 */}
-          <div className="col-md-4 col-12 mt-2 px-md-5" >
-          <button className='border-0 bg-transparent text-start' onClick={() => {navigate ('/detail');}}>
-          <img src={Service1} alt="" className='img-fluid' />
-          <h3 className='mt-5'>Web Design</h3>
-          <p>Situs web adalah alat pemasaran merek yang paling penting. Itu dapat memberikan konten yang beragam, ke khalayak luas dalam waktu singkat.</p>
-          </button>    
-          </div>
-          {/* card 5 */}
-          <div className="col-md-4 col-12 mt-2 px-md-5" >
-          <button className='border-0 bg-transparent text-start' onClick={() => {navigate ('/detail');}}>
-          <img src={Service1} alt="" className='img-fluid' />
-          <h3 className='mt-5'>Web Design</h3>
-          <p>Situs web adalah alat pemasaran merek yang paling penting. Itu dapat memberikan konten yang beragam, ke khalayak luas dalam waktu singkat.</p>
-          </button>    
-          </div>
-          {/* card 6 */}
-          <div className="col-md-4 col-12 mt-2 px-md-5" >
-          <button className='border-0 bg-transparent text-start' onClick={() => {navigate ('/detail');}}>
-          <img src={Service1} alt="" className='img-fluid' />
-          <h3 className='mt-5'>Web Design</h3>
-          <p>Situs web adalah alat pemasaran merek yang paling penting. Itu dapat memberikan konten yang beragam, ke khalayak luas dalam waktu singkat.</p>
-          </button>    
-          </div>
-          {/* card 7 */}
-          <div className="col-md-4 col-12 mt-2 px-md-5" >
-          <button className='border-0 bg-transparent text-start' onClick={() => {navigate ('/detail');}}>
-          <img src={Service1} alt="" className='img-fluid' />
-          <h3 className='mt-5'>Web Design</h3>
-          <p>Situs web adalah alat pemasaran merek yang paling penting. Itu dapat memberikan konten yang beragam, ke khalayak luas dalam waktu singkat.</p>
-          </button>    
-          </div>
-          {/* card 8 */}
-          <div className="col-md-4 col-12 mt-2 px-md-5" >
-          <button className='border-0 bg-transparent text-start' onClick={() => {navigate ('/detail');}}>
-          <img src={Service1} alt="" className='img-fluid' />
-          <h3 className='mt-5'>Web Design</h3>
-          <p>Situs web adalah alat pemasaran merek yang paling penting. Itu dapat memberikan konten yang beragam, ke khalayak luas dalam waktu singkat.</p>
-          </button>    
-          </div>
-          {/* card 9 */}
-          <div className="col-md-4 col-12 mt-2 px-md-5" >
-          <button className='border-0 bg-transparent text-start' onClick={() => {navigate ('/detail');}}>
-          <img src={Service1} alt="" className='img-fluid' />
-          <h3 className='mt-5'>Web Design</h3>
-          <p>Situs web adalah alat pemasaran merek yang paling penting. Itu dapat memberikan konten yang beragam, ke khalayak luas dalam waktu singkat.</p>
-          </button>    
-          </div>
-          
+          {
+            services.map(services => {
+              return <div className="col-md-4 col-12 mt-2 px-md-5" key={services.id} >
+              <button className='border-0 bg-transparent text-start' onClick={() => {navigate ('/detail');}}>
+              <img src={services.image} alt="" className='img-fluid' />
+              <h3 className='mt-5'>{services.title}</h3>
+              <p>{services.description}</p>
+              </button>    
+              </div>
+            })
+          }
         </div>
       </div>
     </div>
