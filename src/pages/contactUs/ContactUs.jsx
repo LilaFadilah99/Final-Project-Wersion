@@ -31,12 +31,12 @@ function ContactUs() {
               <div class="invalid-feedback">Please choose a username.</div>
               <div class="valid-feedback">Looks good!</div>
               {/* phone */}
-              <label for="validationCustom01" class="form-label fw-bold pt-3">Name</label>
+              <label for="validationCustom01" class="form-label fw-bold pt-3">Phone</label>
               <input type="text" class="form-control" id="validationCustom01" required/>
               <div class="valid-feedback">Looks good!</div>
               <div class="invalid-feedback">Please choose a username.</div>
               {/* message */}
-              <label for="exampleFormControlTextarea1" class="form-label fw-bold pt-3">Example textarea</label>
+              <label for="exampleFormControlTextarea1" class="form-label fw-bold pt-3">Message</label>
               <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
               <div class="valid-feedback">Looks good!</div>
               <div class="invalid-feedback">Please choose a username.</div> <br />
