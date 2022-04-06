@@ -73,7 +73,6 @@ function Login() {
                                 <p className=" mb-0">Don't have an account?<Link to="/register"
                                         className="text-primary text-decoration-none"> Register here</Link></p>
                             </div>
-                        </div>
                     <div className="d-grid col-12 mt-md-4 mt-3">
                       <button type="submit" className="btn" style={{ backgroundColor: "#fdba12" }}>
                         Login
