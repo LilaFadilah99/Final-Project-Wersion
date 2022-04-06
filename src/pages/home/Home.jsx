@@ -22,8 +22,10 @@ import Detail1 from '../../assets/Home/detail-1.png'
 import Detail2 from '../../assets/Home/detail-2.png'
 import Detail3 from '../../assets/Home/detail-3.png'
 import Logo from '../../assets/logo.png'
+import { useNavigate } from 'react-router-dom'
 
 function Home() {
+  let navigate = useNavigate();
   return (
     <>
       <Navbar/>
@@ -47,7 +49,9 @@ function Home() {
                 Saatnya beralih ke strategi pemasaran terkini di internet! <br />
                 Meningkatkan bisnis, popularitas dan kepercayaan melalui media sosial
               </h5>
-              <a href=""><button id="heroButton" className="my-3">Start a project</button></a>  
+             <button id="heroButton" className="my-3" onClick={() => {
+                navigate ('/services');
+              }}>Start a project</button>
             </div>
           </div>
         </div>
@@ -289,7 +293,9 @@ function Home() {
             <p className="text-white font-weight-bold">Fokus Kami</p>
             <h2 style={{color: "#fdba12"}}>We approach every project with a clear vision.</h2>
             <p className="text-white">Kami tidak hanya membangun situs web yang cantik. Di MadeByShape kami memahami semua aspek situs yang sukses mulai dari desain hingga pengembangan dan pengujian web, hingga SEO dan Hosting. Kami menyesuaikan layanan kami dengan klien dan kebutuhan proyek.</p> 
-            <button id="detailButton" className="my-3">Start a project</button>
+            <button id="detailButton" className="my-3"  onClick={() => {
+                  navigate ('/contact');
+                }}>Contack Us</button>
           </div>
           <div className="col-md-6 col-sm-12 mb-4 mb-md-0 ">
             <img src={WebPict} className="img-fluid" id="detailImage" alt="#" />

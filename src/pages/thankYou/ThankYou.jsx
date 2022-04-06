@@ -2,8 +2,10 @@ import React from 'react'
 import '../thankYou/ThankYou.css'
 import Navbar from '../../components/navbar/Navbar'
 import DetailContack from '../../components/detailContack/DetailContack'
+import { useNavigate } from 'react-router-dom'
 
-function thankYou() {
+function ThankYou() {
+  let navigate = useNavigate();
   return (
     <>
     <Navbar/>
@@ -22,7 +24,9 @@ function thankYou() {
             </div>
             <div className="col-md-6 col-12 mt-md-0 mt-3">
                 <p>Sementara itu mengapa Anda tidak mengecek media sosial kami dan testimonial klien kami yang sebenarnya untuk menunjukkan mengapa merek memilih untuk bekerja sama dengan kami. Atau kunjungi halaman tim kami untuk melihat wajah di balik email.</p>
+                <button id="methodButton1" className="my-3"  onClick={() => {navigate ('/products');}}>More Products</button> 
             </div>
+            
             
         </div>
       </div>
@@ -33,4 +37,4 @@ function thankYou() {
   )
 }
 
-export default thankYou
+export default ThankYou

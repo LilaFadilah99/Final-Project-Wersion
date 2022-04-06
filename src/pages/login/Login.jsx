@@ -1,5 +1,6 @@
+import { Link } from 'react-router-dom'
+import '../login/Login.css'
 import React from "react";
-import "../login/Login.css";
 // import LoginPict from '../../assets/Login/login.png'
 import LoginPict from "../../assets/Home/hero-bg.png";
 
@@ -68,10 +69,16 @@ function Login() {
                       </label>
                     </div>
 
+                            <div className="mt-4">
+                                <p className=" mb-0">Don't have an account?<Link to="/register"
+                                        className="text-primary text-decoration-none"> Register here</Link></p>
+                            </div>
+                        </div>
                     <div className="d-grid col-12 mt-md-4 mt-3">
                       <button type="submit" className="btn" style={{ backgroundColor: "#fdba12" }}>
                         Login
                       </button>
+
                     </div>
                   </form>
 

@@ -1,6 +1,7 @@
+import {Link} from 'react-router-dom'
+import '../register/Register.css'
+import LoginPict from '../../assets/Home/hero-bg.png'
 import React from "react";
-import "../register/Register.css";
-import LoginPict from "../../assets/Home/hero-bg.png";
 
 function Register() {
   return (
@@ -73,6 +74,13 @@ function Register() {
                       <small class="text-secondary">At least 8 character, number and alphabet</small>
                     </div>
 
+                  <div class="d-grid col-12 mt-md-4 mt-4">
+                    <button type="submit" class="btn"  style={{backgroundColor: "#fdba12"}}>Sign Up</button>
+                  </div>
+                </form>
+
+                <div class="mt-4">
+                  <p class="mb-0">Already have an account? <Link to="/login" class="text-primary text-decoration-none">Login</Link></p>
                     <div class="mb-3">
                       <label for="konfirmasiPassword" class="form-label">
                         Confirm Password
@@ -108,6 +116,7 @@ function Register() {
                       </a>
                     </p>
                   </div>
+
                 </div>
               </div>
             </div>

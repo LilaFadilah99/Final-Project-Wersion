@@ -6,8 +6,10 @@ import Detail1 from '../../assets/DetailProduct/detail1.jpg'
 import Detail2 from '../../assets/DetailProduct/detail2.jpg'
 import DetailContack from '../../components/detailContack/DetailContack'
 import Footer from '../../components/footer/Footer'
+import { useNavigate } from 'react-router-dom'
 
 function DetailProducts() {
+  let navigate = useNavigate();
   return (
     <>
     <Navbar/>
@@ -35,7 +37,10 @@ function DetailProducts() {
                 {/* kolom kanan */}
                 <div className="col-md-6 col-12">
                 <p>UI/UX, Wireframes, Penelitian dan Pengembangan - kami memahami semua bidang Desain Web. Kami dapat membawa bisnis awal tanpa apa pun ke merek yang berfungsi penuh secara online dan offline. Kami dapat mengubah situs web yang ada, atau membawa merek yang sukses ke tingkat berikutnya. Tim desain web kami yang berbakat dan kreatif akan bekerja sama dengan Anda dalam kolaborasi untuk membuat situs yang mencerminkan merek Anda, berbicara kepada audiens Anda dengan makna dan kepribadian, dan memiliki fungsionalitas yang hebat di seluruh perangkat terbaru.</p>
-                <a href=""><button id="descriptionProductsButton" className="my-3">Let's start a project</button></a>  
+                <button id="descriptionProductsButton" className="my-3" onClick={() => {
+                  navigate ('/contact');
+                }}
+                >Discussion with us</button> 
                 </div> 
             </div>
         </div>
@@ -61,7 +66,9 @@ function DetailProducts() {
                                     <h3 className='fw-bold'>Apakah Anda merek startup, perusahaan mapan, di Jakarta atau di seluruh Indoneia? Tidak masalah. Kami bekerja dengan berbagai klien.</h3> <br />
                                     <p>Kami tahu bahwa sulit bagi merek untuk menyiapkan pengalaman online, dan anggaran bisa ketat. Kami ingin membantu merek baru tumbuh dan bekerja dalam hubungan jangka panjang.</p>
                                     <p>Dan kami juga memiliki pengalaman merancang, membangun, menguji, dan meluncurkan situs web untuk organisasi global besar. Kami dapat menjadi perpanjangan dari tim pemasaran internal Anda atau memanfaatkan tim ahli kami untuk menjadi lengan digital lengkap Anda.</p> <br />
-                                    <a href=""><button id="methodButton1" className="my-3">Join Us</button></a>  
+                                    <button id="methodButton1" className="my-3"  onClick={() => {
+                                        navigate ('/contact');
+                                      }}>Join Us</button> 
                                 </div>
                             </div>
                         </div>
@@ -97,7 +104,7 @@ function DetailProducts() {
             <div className="col-md-6 my-5 my-md-0 text-start text-md-start" id="heroDescription">
               <h3>Kami menangani setiap proyek secara internal, kami tidak melakukan outsourcing.</h3> <br />
               <p>Kami adalah tim yang kuat, kami tahu berapa banyak pekerjaan yang dapat kami lakukan - dan kami memberi tahu klien jika akan ada penundaan. Setiap proyek yang kami ambil diproduksi di rumah, tidak ada outsourcing yang terlibat. Jika kami merasa kami tidak cocok untuk proyek Anda, kami akan menggunakan pengalaman industri digital kami untuk merekomendasikan agensi yang cocok untuk Anda.</p>
-              <a href=""><button id="heroButton" className="my-3">Start a project</button></a>  
+              <button id="methodButton1" className="my-3"  onClick={() => {navigate ('/products');}}>More Products</button> 
             </div>
           </div>
            {/* akhir visi 2 */}

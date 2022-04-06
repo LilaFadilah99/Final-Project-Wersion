@@ -4,8 +4,10 @@ import Navbar from '../../components/navbar/Navbar'
 import Trusted from '../../assets/Home/trusted.png'
 import Footer from '../../components/footer/Footer'
 import DetailContack from '../../components/detailContack/DetailContack'
+import { useNavigate } from 'react-router-dom'
 
 function Method() {
+  let navigate = useNavigate();
   return (
     <>
     <Navbar/>
@@ -24,7 +26,9 @@ function Method() {
               <p>
               Shape akan mengirimkan referensi web klien untuk memberikan gambaran arah sehingga kedua belah pihak berada di halaman yang sama dalam hal gaya.
            </p> <br />
-              <a href=""><button id="methodButton1" className="my-3">Next Step</button></a>  
+              <button id="methodButton1" className="my-3" onClick={() => {
+                  navigate ('/services');
+                }}>Start a project</button>
             </div>
           </div>
         </div>
@@ -44,7 +48,9 @@ function Method() {
               <p>
               Setelah klien puas dengan arah proyek, Shape kemudian akan mulai merancang konsep berdasarkan referensi tersebut.
            </p> <br />
-              <a href=""><button id="methodButton2" className="my-3">Next Step</button></a>  
+           <button id="methodButton1" className="my-3" onClick={() => {
+                  navigate ('/services');
+                }}>Start a project</button>
             </div>
           </div>
         </div>
@@ -66,7 +72,9 @@ function Method() {
               <p>
               Setelah desain ditandatangani oleh klien, Shape kemudian akan mulai membangun front-endsitus web kemudian membungkusnya di sekitar  CMS.
            </p> <br />
-              <a href=""><button id="methodButton3" className="my-3">Start a project</button></a>  
+           <button id="methodButton1" className="my-3" onClick={() => {
+                  navigate ('/services');
+                }}>Start a project</button> 
             </div>
           </div>
         </div>
@@ -86,7 +94,9 @@ function Method() {
               <p>
               Setelah situs web dibuat, sekarang siap untuk memasukkan konten.
            </p> <br />
-              <a href=""><button id="methodButton4" className="my-3">Start a project</button></a>  
+           <button id="methodButton1" className="my-3" onClick={() => {
+                  navigate ('/services');
+                }}>Start a project</button>
             </div>
           </div>
         </div>
@@ -106,7 +116,9 @@ function Method() {
               <p>
               Setelah semua konten dimasukkan, Wersion kemudian akan melakukan serangkaian tes terakhir dan melakukan debug pada berbagai browser untuk kompatibilitas sebelum diluncurkan.
            </p> <br />
-              <a href=""><button id="methodButton5" className="my-3">Next Step</button></a>  
+           <button id="methodButton1" className="my-3" onClick={() => {
+                  navigate ('/services');
+                }}>Start a project</button>
             </div>
           </div>
         </div>
