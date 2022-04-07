@@ -1,9 +1,39 @@
+import React, {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
 import '../login/Login.css'
 // import LoginPict from '../../assets/Login/login.png'
 import LoginPict from '../../assets/Home/hero-bg.png'
 
 function Login() {
+  const [value, setValue] = useState({
+    email: "",
+    password:"",
+  })
+
+  function handleInput(event) {
+    setValue({
+      ...value,
+      [event.target.name] : event.target.value
+    })
+  }
+
+  async function handleLogin(event) {
+    event.preventDefault()
+    fetch('https://pickled-capricious-beak.glitch.me/users')
+    .then(response => response.json())
+    .then(data => {
+      const isUser = data.find(user => user.email === value.email && user.password === value.password)
+      if (isUser) {
+        localStorage.setItem("user", JSON.stringify(isUser))
+      }
+    })
+    .catch(err => console.log(err))
+  }
+
+  // useEffect(() => {
+  //   console.log(value)
+  // },[value])
+
   return (
    <>
     <main id='loginPage' className="background d-flex min-vh-100 justify-content-center align-items-center"
@@ -32,12 +62,12 @@ function Login() {
                                         <button type="button" className="btn-close"></button>
                             </div>
 
-                            <form id="loginForm">
+                            <form id="loginForm" onSubmit={handleLogin}>
                                 <div className="mb-3">
                                     <label for="email" className="form-label">Email</label>
                                     <div className="input-group mb-1">
                                         <span className="input-group-text" id="basic-addon1"><i className="fa-solid fa-at"></i></span>
-                                        <input type="email" className="form-control" placeholder="Enter your e-mail"
+                                        <input onChange={handleInput} type="email" value={value.email} name='email' className="form-control" placeholder="Enter your e-mail"
                                             id="email" autoComplete="off"/>
                                     </div>
                                     <small className="text-danger d-none">Please enter a valid email address</small> </div>
@@ -45,7 +75,7 @@ function Login() {
                                             <label for="password" className="form-label">Password</label>
                                             <div className="input-group mb-1">
                                                 <span className="input-group-text" id="basic-addon1"><i className="fa-solid fa-lock"></i></span>
-                                                <input type="password" className="form-control"
+                                                <input onChange={handleInput} type="password" value={value.password} name='password' className="form-control"
                                                     placeholder="Enter your password" id="password" autoComplete="off"/>
                                             </div>
                                             <small className="text-secondary">At least 8 character, number and

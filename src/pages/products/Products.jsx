@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom'
 
 function Products() {
   const [products, setProducts] = useState([])
+  
   async function fetchProducts() {
     fetch('https://pickled-capricious-beak.glitch.me/products')
     .then(response => response.json())

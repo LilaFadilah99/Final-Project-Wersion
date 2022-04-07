@@ -1,8 +1,42 @@
+import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import '../register/Register.css'
 import LoginPict from '../../assets/Home/hero-bg.png'
 
 function Register() {
+  const [value, setValue] = useState({
+    email: "",
+    name: "",
+    password:"",
+  })
+
+  function handleInput(event) {
+    setValue({
+      ...value,
+      [event.target.name] : event.target.value
+    })
+  }
+
+  async function handleRegister(event) {
+    event.preventDefault()
+    fetch('https://pickled-capricious-beak.glitch.me/users', {
+      method: 'POST',
+      headers: {
+      'Content-Type': 'application/json'
+    },
+      body: JSON.stringify(value)
+    })
+    .then(response => response.json())
+    .then(data => console.log("berhasil register !!!", data)
+      // bisa di taro notifikasi jika berhasil register, atau mau di pakai navigate ke login page
+    )
+    .catch(err => console.log(err))
+  }
+
+  // useEffect(() => {
+  //   console.log(value)
+  // },[value])
+
   return (
     <>
     <main class="d-flex min-vh-100 justify-content-center align-items-center" style={{backgroundColor: "#FFD365"}}>
@@ -29,12 +63,12 @@ function Register() {
                   <button type="button" class="btn-close"></button>
                 </div>
 
-                <form id="registForm">
+                <form id="registForm" onSubmit={handleRegister}>
                   <div class="mb-3">
                     <label for="name" class="form-label">Name</label>
                     <div class="input-group">
                       <span class="input-group-text" id="basic-addon1"><i class="far fa-user"></i></span>
-                      <input type="text" class="form-control" placeholder="Enter your name" id="name" autocomplete="off" />
+                      <input type="text" value={value.name} onChange={handleInput} name='name' class="form-control" placeholder="Enter your name" id="name" autocomplete="off" />
                     </div>
                     <small class="text-danger d-none">Please input your name</small>
                   </div>
@@ -43,7 +77,7 @@ function Register() {
                     <label for="email" class="form-label">E-mail</label>
                     <div class="input-group">
                       <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-at"></i></span>
-                      <input type="email" class="form-control" placeholder="Enter your email" id="email" autocomplete="off" />
+                      <input type="email" value={value.email} onChange={handleInput} name='email' class="form-control" placeholder="Enter your email" id="email" autocomplete="off" />
                     </div>
                     <small class="text-danger d-none">Please enter a valid e-mail</small>
                   </div>
@@ -52,7 +86,7 @@ function Register() {
                     <label for="password" class="form-label">Password</label>
                     <div class="input-group">
                       <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
-                      <input type="password" class="form-control" placeholder="Enter your password" id="password" autocomplete="off" />
+                      <input type="password" value={value.password} onChange={handleInput} name='password' class="form-control" placeholder="Enter your password" id="password" autocomplete="off" />
                     </div>
                     <small class="text-secondary">At least 8 character, number and alphabet</small>
                   </div>
