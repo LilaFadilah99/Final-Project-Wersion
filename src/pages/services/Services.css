@@ -1,0 +1,11 @@
+.inner {
+    overflow: hidden;
+  }
+.inner img {
+  transition: all 1.5s ease;
+  
+}
+.inner img:hover {
+  transform: scale(1.2);
+  filter: brightness(0.7);
+}

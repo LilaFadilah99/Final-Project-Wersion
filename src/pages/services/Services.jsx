@@ -45,7 +45,10 @@ function Services() {
             services.map(services => {
               return <div className="col-md-4 col-12 mt-2 px-md-5" key={services.id} >
               <button className='border-0 bg-transparent text-start' onClick={() => {navigate (`/detail/${services.id}`);}}>
-              <img src={services.image} alt="" className='img-fluid' />
+                <div className="inner">
+                <img src={services.image} alt="" className='img-fluid' />
+                </div>
+              
               <h3 className='mt-5'>{services.title}</h3>
               <p>{services.keterangan}</p>
               </button>    
