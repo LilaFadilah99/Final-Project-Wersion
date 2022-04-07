@@ -57,6 +57,7 @@ function Register() {
                     <small class="text-secondary">At least 8 character, number and alphabet</small>
                   </div>
 
+
                   <div class="mb-3">
                     <label for="konfirmasiPassword" class="form-label">Confirm Password</label>
                     <div class="input-group">
