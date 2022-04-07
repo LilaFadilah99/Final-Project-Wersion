@@ -4,7 +4,7 @@ import Navbar from '../../components/navbar/Navbar'
 // import Products1 from '../../assets/products/products1.avif'
 import Footer from '../../components/footer/Footer'
 import DetailContack from '../../components/detailContack/DetailContack'
-import { Navigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function Products() {
   const [products, setProducts] = useState([])
@@ -15,13 +15,10 @@ function Products() {
     .catch(err => console.log(err))
   }
 
-  function cardClick(title) {
-    // console.log(`card ${title} di klik`)
-  }
-
   useEffect(()=> {
     fetchProducts()
   },[])
+  let navigate = useNavigate();
   return (
    <>
     <Navbar/>
@@ -45,7 +42,7 @@ function Products() {
           <div className="row justify-content-center ">
           {
             products.map(products => {
-              return <div className="mb-3 col-md-3 col-6" key={products.id} onClick={() => cardClick(products.title)} >
+              return <div className="mb-3 col-md-3 col-6" key={products.id} onClick={() => {navigate (`/checkout/${products.id}`);}} >
               <div className="card h-100 rounded-2">
                 <div className="inner">
                 <img src={products.image} className="card-img-top" alt="paket 1" />

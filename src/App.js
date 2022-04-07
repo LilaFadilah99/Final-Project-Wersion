@@ -12,6 +12,7 @@ import Register from './pages/register/Register';
 import ThankYou from './pages/thankYou/ThankYou';
 import BuyProducts from './pages/buyProducts/BuyProducts';
 import Loading from './pages/loading/Loading';
+import Checkout from './pages/checkout/Checkout';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
         <Route path="/thanks" element={<ThankYou />} />
         <Route path="/buy" element={<BuyProducts />} />
         <Route path="/loading" element={<Loading />} />
+        <Route path="/checkout/:id" element={<Checkout />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </>
