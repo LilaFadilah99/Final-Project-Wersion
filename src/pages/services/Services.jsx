@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import '../../pages/services/Services.css'
 import Navbar from '../../components/navbar/Navbar'
-import Service1 from '../../assets/Service/service1.jpg'
+// import Service1 from '../../assets/Service/service1.jpg'
 import DetailContack from '../../components/detailContack/DetailContack';
 import Footer from '../../components/footer/Footer';
 import { useNavigate } from 'react-router-dom'
@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom'
 function Services() {
   const [services, setServices] = useState([])
   async function fetchServices() {
-    fetch('https://pickled-capricious-beak.glitch.me/services')
+    fetch('https://pickled-capricious-beak.glitch.me/product-description')
     .then(response => response.json())
     .then(data => setServices(data))
     .catch(err => console.log(err))
@@ -44,10 +44,10 @@ function Services() {
           {
             services.map(services => {
               return <div className="col-md-4 col-12 mt-2 px-md-5" key={services.id} >
-              <button className='border-0 bg-transparent text-start' onClick={() => {navigate ('/detail');}}>
+              <button className='border-0 bg-transparent text-start' onClick={() => {navigate (`/detail/${services.id}`);}}>
               <img src={services.image} alt="" className='img-fluid' />
               <h3 className='mt-5'>{services.title}</h3>
-              <p>{services.description}</p>
+              <p>{services.keterangan}</p>
               </button>    
               </div>
             })
