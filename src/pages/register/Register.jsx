@@ -56,17 +56,6 @@ function Register() {
                     </div>
                     <small class="text-secondary">At least 8 character, number and alphabet</small>
                   </div>
-
-
-                  <div class="mb-3">
-                    <label for="konfirmasiPassword" class="form-label">Confirm Password</label>
-                    <div class="input-group">
-                      <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-lock"></i></span>
-                      <input type="password" class="form-control" placeholder="Enter your password" id="konfirmasiPassword" autocomplete="off" />
-                    </div>
-                    <small class="text-danger d-none">Passwords do not match</small>
-                  </div>
-
                   <div class="mb-3 form-check">
                     <input type="checkbox" class="form-check-input" id="showPassword" />
                     <label class="form-check-label" for="showPassword">Show password</label>
