@@ -22,7 +22,7 @@ function DetailProducts() {
 
   useEffect(()=> {
     getDetailProduct(param.id)
-  },[])
+  },[param.id])
 
   return (
     <>
@@ -52,7 +52,7 @@ function DetailProducts() {
                 <div className="col-md-6 col-12">
                 <p>{detailProduct.deskripsi}</p>
                 <button id="descriptionProductsButton" className="my-3" onClick={() => {
-                  navigate ('/contact');
+                  navigate ('/buy');
                 }}
                 >Discussion with us</button> 
                 </div> 
