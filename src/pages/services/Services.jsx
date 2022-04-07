@@ -10,7 +10,7 @@ import { useNavigate } from 'react-router-dom'
 function Services() {
   const [services, setServices] = useState([])
   async function fetchServices() {
-    fetch('https://pickled-capricious-beak.glitch.me/services')
+    fetch('https://pickled-capricious-beak.glitch.me/product-description')
     .then(response => response.json())
     .then(data => setServices(data))
     .catch(err => console.log(err))
