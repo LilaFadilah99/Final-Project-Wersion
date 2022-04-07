@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import './DetailProducts.css'
 import Navbar from '../../components/navbar/Navbar'
 import DetailProduct from '../../assets/DetailProduct/detailProducts.png'
@@ -6,10 +6,24 @@ import Detail1 from '../../assets/DetailProduct/detail1.jpg'
 import Detail2 from '../../assets/DetailProduct/detail2.jpg'
 import DetailContack from '../../components/detailContack/DetailContack'
 import Footer from '../../components/footer/Footer'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 function DetailProducts() {
   let navigate = useNavigate();
+  let param = useParams()
+  const [detailProduct, setDetailProduct] = useState({})
+
+  async function getDetailProduct(id) {
+    fetch(`https://pickled-capricious-beak.glitch.me/product-description/${id}`)
+    .then(response => response.json())
+    .then(data => setDetailProduct(data))
+    .catch(err => console.log(err))
+  }
+
+  useEffect(()=> {
+    getDetailProduct(param.id)
+  },[])
+
   return (
     <>
     <Navbar/>
@@ -19,7 +33,7 @@ function DetailProducts() {
       <div className="container">
         <div className="row">
           <div className="col-12 mt-md-5">
-            <h1>Web Design</h1>
+            <h1>{detailProduct.title}</h1>
           </div>
         </div>
       </div>
@@ -36,7 +50,7 @@ function DetailProducts() {
                 </div> 
                 {/* kolom kanan */}
                 <div className="col-md-6 col-12">
-                <p>UI/UX, Wireframes, Penelitian dan Pengembangan - kami memahami semua bidang Desain Web. Kami dapat membawa bisnis awal tanpa apa pun ke merek yang berfungsi penuh secara online dan offline. Kami dapat mengubah situs web yang ada, atau membawa merek yang sukses ke tingkat berikutnya. Tim desain web kami yang berbakat dan kreatif akan bekerja sama dengan Anda dalam kolaborasi untuk membuat situs yang mencerminkan merek Anda, berbicara kepada audiens Anda dengan makna dan kepribadian, dan memiliki fungsionalitas yang hebat di seluruh perangkat terbaru.</p>
+                <p>{detailProduct.deskripsi}</p>
                 <button id="descriptionProductsButton" className="my-3" onClick={() => {
                   navigate ('/contact');
                 }}
