@@ -47,7 +47,9 @@ function Products() {
             products.map(products => {
               return <div className="mb-3 col-md-3 col-6" key={products.id} onClick={() => cardClick(products.title)} >
               <div className="card h-100 rounded-2">
+                <div className="inner">
                 <img src={products.image} className="card-img-top" alt="paket 1" />
+                </div>
                 <div className="card-body">
                   <p className="card-title fw-bold">{products.title}</p>
                   <p className="card-text" style={{fontSize: "15px"}}>Rp. {products.price}</p>
