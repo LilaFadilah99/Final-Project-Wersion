@@ -1,14 +1,20 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import '../login/Login.css'
 // import LoginPict from '../../assets/Login/login.png'
 import LoginPict from '../../assets/Home/hero-bg.png'
+import { useNavigate, useLocation } from 'react-router-dom'
+
 
 function Login() {
+    const navigate = useNavigate()
     const [value, setValue] = useState ({
         email: "",
         password: ""
     })
+
+    const location = useLocation()
+    const stateLocation = location?.state
 
     function handleInput(event) {
         setValue({
@@ -18,23 +24,34 @@ function Login() {
     }
 
     async function handleLogin(event){
-        event.preventDefault()
+        event.preventDefault() 
         fetch('https://pickled-capricious-beak.glitch.me/users')
         .then(response => response.json())
         .then(data => {
-            const isUser = data.find(user => user.email === value.email && user.password === value.password)
+            const isUser = data?.find(user => (user?.email === value.email) && (user?.password === value.password))
                 if (isUser) {
+                    console.log('login berhasil')
+                    
                     localStorage.setItem("user", JSON.stringify(isUser))
+                    const fromLocation = stateLocation?.from?.pathname
+                if (fromLocation) {
+                    navigate(fromLocation)
+                    
+                }else {
+                    navigate('/')
                 }
+                } else {
+                    console.log('login gagal')
+                }   
         })
         .catch(err => console.log(err))
     }
-
     // useEffect(() => {
     //     console.log(value)
     // },[value])
   return (
    <>
+   
     <main id='loginPage' className="background d-flex min-vh-100 justify-content-center align-items-center"
         style={{backgroundColor: "#FFD365"}} >
         <div className="container">

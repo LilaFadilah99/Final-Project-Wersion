@@ -2,8 +2,10 @@ import React, {useState, useEffect} from 'react'
 import {Link} from 'react-router-dom'
 import '../register/Register.css'
 import LoginPict from '../../assets/Home/hero-bg.png'
+import { useNavigate } from 'react-router-dom'
 
 function Register() {
+  const navigate = useNavigate()
   const [value, setValue] = useState({
     email: "",
     name: "",
@@ -29,7 +31,11 @@ function Register() {
       body: JSON.stringify(value)
     })
     .then(response => response.json())
-    .then(data => console.log("register berhasil", data))
+    .then(data => {
+      localStorage.setItem('userLogin', value.email)
+          localStorage.setItem('userLoginID', data?.id)
+          navigate('/')
+    })
     .catch(err => console.log(err))
   }
 // useEffect(() => {
