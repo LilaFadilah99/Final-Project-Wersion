@@ -43,7 +43,7 @@ function Services() {
         <div className="row text-start">
           {
             services.map(services => {
-              return <div className="col-md-4 col-12 mt-2 px-md-5" key={services.id} >
+              return <div className="col-md-4 col-12 mt-2 px-md-5 column-1" key={services.id} >
               <button className='border-0 bg-transparent text-start' onClick={() => {navigate (`/detail/${services.id}`);}}>
                 <div className="inner">
                 <img src={services.image} alt="" className='img-fluid' />
@@ -59,6 +59,7 @@ function Services() {
       </div>
     </div>
     </section>
+    <br />
     <DetailContack/>
     <Footer/>
     </>

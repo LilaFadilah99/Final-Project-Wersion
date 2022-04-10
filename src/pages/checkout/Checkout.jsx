@@ -49,7 +49,7 @@ function Checkout() {
                 <div className="row">
                     <div className="col-6">
                         <div className="container py-2" style={{backgroundColor: "#EFEFEF"}}>
-                            <span className='align-middle fw-bold'>{checkout.price}</span>
+                            <span className='align-middle fw-bold'>Rp. {checkout.price}</span>
                         </div>
                     </div>
                 </div>

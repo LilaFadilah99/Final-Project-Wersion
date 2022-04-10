@@ -185,7 +185,7 @@ function Home() {
     <div className="container-fluid" style={{backgroundColor: "#f3f6f9"}} id="businesContainerFluid">
       <div className="container" id="businesContainer">
         <div className="row">
-          <div className="col-md-4 offset-md-2">
+          <div className="col-md-4 offset-md-2 ">
             <h2>The perfect Web<br/>solution for your<br/>business</h2>
           </div>
           <div className="col-md-4">
@@ -194,7 +194,7 @@ function Home() {
         </div>
         <div className="row py-5" id="businesCard">
           <div className="col-md-4 col-12 mb-3 d-flex justify-content-center">
-            <div className="card border-0" style={{width: "18rem"}}>
+            <div className="card border-0 businessColumn" style={{width: "18rem"}}>
               <img src={Busines1} alt="our busines" className="rounded mx-auto d-block pt-4"/>
               <div className="card-body text-center">
                 <h5 className="card-title font-weight-bold">Pilih Produk Anda</h5>
@@ -212,7 +212,7 @@ function Home() {
             </div>
           </div>
           <div className="col-md-4 col-12 mb-3 d-flex justify-content-center">
-            <div className="card border-0" style={{width: "18rem"}}>
+            <div className="card border-0 businessColumn" style={{width: "18rem"}}>
               <img src={Busines2} alt="our busines" className="rounded mx-auto d-block pt-4"/>
               <div className="card-body text-center">
                 <h5 className="card-title font-weight-bold">Transaksi Dimana Saja</h5>
@@ -230,7 +230,7 @@ function Home() {
             </div>
           </div>
           <div className="col-md-4 col-12 mb-3 d-flex justify-content-center">
-            <div className="card border-0" style={{width: "18rem"}}>
+            <div className="card border-0 businessColumn" style={{width: "18rem"}}>
               <img src={Busines3} alt="our busines" className="rounded mx-auto d-block pt-4"/>
               <div className="card-body text-center">
                 <h5 className="card-title font-weight-bold">Solusi Bisnis</h5>

@@ -1,41 +1,62 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
 import '../login/Login.css'
 // import LoginPict from '../../assets/Login/login.png'
 import LoginPict from '../../assets/Home/hero-bg.png'
+import { useNavigate, useLocation } from 'react-router-dom'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 function Login() {
-  const [value, setValue] = useState({
-    email: "",
-    password:"",
-  })
-
-  function handleInput(event) {
-    setValue({
-      ...value,
-      [event.target.name] : event.target.value
+    const MySwal = withReactContent(Swal)
+    const navigate = useNavigate()
+    const [value, setValue] = useState ({
+        email: "",
+        password: ""
     })
-  }
 
-  async function handleLogin(event) {
-    event.preventDefault()
-    fetch('https://pickled-capricious-beak.glitch.me/users')
-    .then(response => response.json())
-    .then(data => {
-      const isUser = data.find(user => user.email === value.email && user.password === value.password)
-      if (isUser) {
-        localStorage.setItem("user", JSON.stringify(isUser))
-      }
-    })
-    .catch(err => console.log(err))
-  }
+    const location = useLocation()
+    const stateLocation = location?.state
 
-  // useEffect(() => {
-  //   console.log(value)
-  // },[value])
+    function handleInput(event) {
+        setValue({
+            ...value,
+            [event.target.name] : event.target.value
+        })
+    }
 
+    async function handleLogin(event){
+        event.preventDefault() 
+        fetch('https://pickled-capricious-beak.glitch.me/users')
+        .then(response => response.json())
+        .then(data => {
+            const isUser = data?.find(user => (user?.email === value.email) && (user?.password === value.password))
+                if (isUser) {
+                    MySwal.fire({
+                        title: <strong>Login Berhasil</strong>,
+                        html: <i>Anda akan di arahkan ke halaman product.....</i>,
+                        icon: 'success'
+                    }).then(() => {
+                        localStorage.setItem("userLogin", JSON.stringify(isUser))
+                        navigate('/products')
+                        return
+                    })
+                } else {
+                    MySwal.fire({
+                        title: <strong>Email atau Password Salah !!</strong>,
+                        html: <i>Silahkan coba lagi !</i>,
+                        icon: 'error'
+                    })
+                }   
+        })
+        .catch(err => console.log(err))
+    }
+    // useEffect(() => {
+    //     console.log(value)
+    // },[value])
   return (
    <>
+   
     <main id='loginPage' className="background d-flex min-vh-100 justify-content-center align-items-center"
         style={{backgroundColor: "#FFD365"}} >
         <div className="container">
@@ -64,18 +85,18 @@ function Login() {
 
                             <form id="loginForm" onSubmit={handleLogin}>
                                 <div className="mb-3">
-                                    <label for="email" className="form-label">Email</label>
+                                    <label htmlFor="email" className="form-label">Email</label>
                                     <div className="input-group mb-1">
                                         <span className="input-group-text" id="basic-addon1"><i className="fa-solid fa-at"></i></span>
-                                        <input onChange={handleInput} type="email" value={value.email} name='email' className="form-control" placeholder="Enter your e-mail"
+                                        <input onChange={handleInput} type="email" value = {value.email} name='email' className="form-control" placeholder="Enter your e-mail"
                                             id="email" autoComplete="off"/>
                                     </div>
                                     <small className="text-danger d-none">Please enter a valid email address</small> </div>
                                             <div className="mb-2">
-                                            <label for="password" className="form-label">Password</label>
+                                            <label htmlFor="password" className="form-label">Password</label>
                                             <div className="input-group mb-1">
                                                 <span className="input-group-text" id="basic-addon1"><i className="fa-solid fa-lock"></i></span>
-                                                <input onChange={handleInput} type="password" value={value.password} name='password' className="form-control"
+                                                <input onChange={handleInput} type="password" value= {value.password} name='password' className="form-control"
                                                     placeholder="Enter your password" id="password" autoComplete="off"/>
                                             </div>
                                             <small className="text-secondary">At least 8 character, number and
@@ -84,7 +105,7 @@ function Login() {
 
                                 <div className="mb-3 form-check">
                                     <input type="checkbox" className="form-check-input" id="showPassword"/>
-                                    <label className="form-check-label" for="showPassword">Show password</label>
+                                    <label className="form-check-label" htmlFor="showPassword">Show password</label>
                                 </div>
 
                                 <div className="d-grid col-12 mt-md-4 mt-3">

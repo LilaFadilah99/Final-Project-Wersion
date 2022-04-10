@@ -6,7 +6,7 @@
     background-color: #f3950d;
   }
 
-  .inner {
+  /* .inner {
     overflow: hidden;
   }
 .inner img {
@@ -16,4 +16,16 @@
 .inner img:hover {
   transform: scale(1.2);
   filter: brightness(0.7);
+} */
+
+.poductsCard {
+  border: none;
+  /* border-radius: 20px; */
+  transition: all 0.7s;
+  cursor: pointer
+}
+
+.poductsCard:hover {
+  transform: scale(1.1)
+  
 }

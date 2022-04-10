@@ -44,7 +44,7 @@ function Products() {
           {
             products.map(products => {
               return <div className="mb-3 col-md-3 col-6" key={products.id} onClick={() => {navigate (`/checkout/${products.id}`);}} >
-              <div className="card h-100 rounded-2">
+              <div className="card h-100 rounded-2 shadow-sm poductsCard">
                 <div className="inner">
                 <img src={products.image} className="card-img-top" alt="paket 1" />
                 </div>
