@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom'
 
 function Products() {
   const [products, setProducts] = useState([])
+  const [query, setQuery] = useState("");
   async function fetchProducts() {
     fetch('https://pickled-capricious-beak.glitch.me/products')
     .then(response => response.json())
@@ -22,6 +23,22 @@ function Products() {
   return (
    <>
     <Navbar/>
+     {/* Search Bar */}
+     <section id='seacrhBar'>
+      <div className="container-fluid pt-5 pb-3">
+        <div className="container">
+          <div className="row justify-content-end">
+            <div className="col-md-4 col-12">
+            <form className="d-flex">
+              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={(e) => setQuery(e.target.value)} style={{borderRadius: '30px'}}/>
+             <h6><i className="fa-solid fa-magnifying-glass pt-2"></i></h6>
+            </form>
+      
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <section style={{backgroundColor: "#f3f6f9"}}>
       {/* Title */}
     <section id='Title'>
@@ -41,7 +58,7 @@ function Products() {
         <div className="container">
           <div className="row justify-content-center ">
           {
-            products.map(products => {
+            products.filter(products=>products.title.toString().toLowerCase().includes(query)).map(products => {
               return <div className="mb-3 col-md-3 col-6" key={products.id} onClick={() => {navigate (`/checkout/${products.id}`);}} >
               <div className="card h-100 rounded-2 shadow-sm poductsCard">
                 <div className="inner">

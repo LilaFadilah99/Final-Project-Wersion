@@ -9,10 +9,10 @@ import zara from '../../assets/Home/zara.png'
 import LG from '../../assets/Home/LG.png'
 import About from '../../assets/Home/aboutUs.png'
 import Trusted from '../../assets/Home/trusted.png'
-import Service1 from '../../assets/Home/service1.png'
-import Service2 from '../../assets/Home/service2.png'
-import Service3 from '../../assets/Home/service3.png'
-import Service4 from '../../assets/Home/service4.png'
+// import Service1 from '../../assets/Home/service1.png'
+// import Service2 from '../../assets/Home/service2.png'
+// import Service3 from '../../assets/Home/service3.png'
+// import Service4 from '../../assets/Home/service4.png'
 import Busines1 from '../../assets/Home/bisnis-1.png'
 import Busines2 from '../../assets/Home/bisnis-2.png'
 import Busines3 from '../../assets/Home/bisnis-3.png'
@@ -23,6 +23,9 @@ import Detail2 from '../../assets/Home/detail-2.png'
 import Detail3 from '../../assets/Home/detail-3.png'
 import Logo from '../../assets/logo.png'
 import { useNavigate } from 'react-router-dom'
+import Profil1 from '../../assets/Home/profil1.png'
+import Profil2 from '../../assets/Home/profil2.png'
+import Profil3 from '../../assets/Home/profil3.png'
 
 function Home() {
   const [whyJoinUs, setWhyJoinUs] = useState([])
@@ -127,14 +130,14 @@ function Home() {
            <h2>01</h2>
            <h3>E-Commerce & Digital Commerce</h3>
            <p>
-             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-             consequat.
+              Wersion telah bermitra dengan lebih dari 200
+              e-commerce & digital commerce ternama di Indonesia, dan
+              mampu memproses hingga puluhan transaksi setiap harinya.
            </p>
            <h2 className="py-2">02</h2>
-           <h3>Telco Provider & Biller Aggregator</h3>
+           <h3>Mitra Profesional Craft CMS</h3>
            <p>
-             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-             consequat.
+           Sistem manajemen konten pilihan kami adalah Craft CMS daripada Wordpress, memungkinkan Anda mengelola halaman situs web, konten, dan SEO dengan mudah. Kami bangga menjadi mitra profesional Craft CMS dan Craft Commerce yang terverifikasi.
            </p>
          </div>
          <div className="col-md-6 col-sm-12 mb-4 mb-md-0">
@@ -257,9 +260,10 @@ function Home() {
                 </div>
                 <div className="col-md-8">
                   <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                    <p className="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    <p className="card-text"><small className="text-muted">Last updated 3 mins ago</small></p>
+                    <h5 className="card-title">Good design
+                      makes life better.</h5>
+                    <p className="card-text">Agen desain web yang peduli dengan Anda dan merek Anda, terlepas dari ukuran atau industri apa bisnis Anda berada.</p>
+                    <p className="card-text"><small className="text-muted">Solusi Web Anda</small></p>
                   </div>
                 </div>
               </div>
@@ -291,18 +295,18 @@ function Home() {
         <div className="row mt-5" id="detailIcons">
           <div className="col-md-4 col-12">
             <img src={Detail1} alt="detail" className="mb-3"/>
-            <h5 className="font-weight-bold" style={{color: "#fdba12"}}>Solusi Bisnis</h5>
-            <p className="text-white">Craft CMS adalah sistem manajemen konten (CMS) pilihan kami, yang memberi Anda kendali atas konten & tata letak Anda.</p>
+            <h5 className="font-weight-bold" style={{color: "#fdba12"}}>Data Aman</h5>
+            <p className="text-white">Seluruh data pelanggan akan dikelola secara aman dan dilindungi secara ketat</p>
           </div>
           <div className="col-md-4 col-12">
             <img src={Detail2} alt="detail" className="mb-3"/>
-            <h5 className="font-weight-bold" style={{color: "#fdba12"}}>Solusi Bisnis</h5>
-            <p className="text-white">Craft CMS adalah sistem manajemen konten (CMS) pilihan kami, yang memberi Anda kendali atas konten & tata letak Anda.</p>
+            <h5 className="font-weight-bold" style={{color: "#fdba12"}}>Proses Cepat</h5>
+            <p className="text-white">Proses sangat cepat dan instant, dibandingkan harus melakukan marketing bulanan sendiri.</p>
           </div>
           <div className="col-md-4 col-12">
             <img src={Detail3} alt="detail" className="mb-3"/>
-            <h5 className="font-weight-bold" style={{color: "#fdba12"}}>Solusi Bisnis</h5>
-            <p className="text-white">Craft CMS adalah sistem manajemen konten (CMS) pilihan kami, yang memberi Anda kendali atas konten & tata letak Anda.</p>
+            <h5 className="font-weight-bold" style={{color: "#fdba12"}}>Tim Creator Handal</h5>
+            <p className="text-white">Dikerjakan oleh tim yang ahli di berbagai bidang, seperti industri makanan, teknologi, layanan & jasa.</p>
           </div>
         </div>
       </div>
@@ -321,25 +325,20 @@ function Home() {
           </div>
         </div>
         <div className="row d py-5">
-          <div className="col-md-3 col-6 text-center">
-            <img src={Logo} alt="" className="mb-3"/>
+          <div className="col-md-4 col-6 text-center">
+            <img src={Profil1} alt="" className="mb-3"/>
             <h3>Lila Fadilah</h3>
-            <p>CEO dan Web Developer</p>
+            <p>Co-Founder & Web Developer</p>
           </div>
-          <div className="col-md-3 col-6 text-center">
-            <img src={Logo} alt="" className="mb-3"/>
-            <h3>Lila Fadilah</h3>
-            <p>CEO dan Web Developer</p>
+          <div className="col-md-4 col-6 text-center">
+            <img src={Profil2} alt="" className="mb-3"/>
+            <h3>Zuhriatul Aini</h3>
+            <p>Brand Designer</p>
           </div>
-          <div className="col-md-3 col-6 text-center">
-            <img src={Logo} alt="" className="mb-3"/>
-            <h3>Lila Fadilah</h3>
-            <p>CEO dan Web Developer</p>
-          </div>
-          <div className="col-md-3 col-6 text-center">
-            <img src={Logo} alt="" className="mb-3"/>
-            <h3>Lila Fadilah</h3>
-            <p>CEO dan Web Developer</p>
+          <div className="col-md-4 col-6 text-center">
+            <img src={Profil3} alt="" className="mb-3"/>
+            <h3>Ella Gia Dewi</h3>
+            <p>Accounts & Finance</p>
           </div>
         </div>
         
