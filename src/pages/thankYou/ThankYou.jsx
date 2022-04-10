@@ -15,12 +15,12 @@ function ThankYou() {
       <div className="container mt-5">
         <div className="row text-start">
           <div className="col-12">
-            <h1>Thanks for getting in touch.</h1>
+            <h1>Thanks for your Order....</h1>
           </div>
         </div>
         <div className="row py-5">
             <div className="col-md-6 col-12">
-                <h3>Sekedar catatan singkat, kami telah menerima email Anda dan akan menghubungi Anda sesegera mungkin.</h3>
+                <h3>Sekedar catatan singkat, kami telah menerima order Anda dan akan menghubungi Anda sesegera mungkin setelah anda menyelesaikan pembayaran.</h3>
             </div>
             <div className="col-md-6 col-12 mt-md-0 mt-3">
                 <p>Sementara itu mengapa Anda tidak mengecek media sosial kami dan testimonial klien kami yang sebenarnya untuk menunjukkan mengapa merek memilih untuk bekerja sama dengan kami. Atau kunjungi halaman tim kami untuk melihat wajah di balik email.</p>
