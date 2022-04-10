@@ -32,7 +32,7 @@ function Services() {
             <div className="col-md-4 col-12">
             <form className="d-flex">
               <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={(e) => setQuery(e.target.value)} style={{borderRadius: '30px'}}/>
-             <h5><i className="fa-solid fa-magnifying-glass pt-2"></i></h5>
+              <h6><i className="fa-solid fa-magnifying-glass pt-2"></i></h6>
             </form>
       
             </div>
@@ -85,3 +85,4 @@ function Services() {
   );
 }
 export default Services;
+
