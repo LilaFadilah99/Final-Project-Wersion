@@ -1,0 +1,15 @@
+/* style Navbar */
+#buyProduct {
+    width: 100px;
+    height: 40px;
+    border: none;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #FF9F45;
+    transition: 0.3s ease;
+    cursor: pointer;
+    }
+    
+    #buyProduct:hover {
+    background-color: #F76E11;
+    }    

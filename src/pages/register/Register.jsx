@@ -3,8 +3,11 @@ import {Link} from 'react-router-dom'
 import '../register/Register.css'
 import LoginPict from '../../assets/Home/hero-bg.png'
 import { useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 function Register() {
+  const MySwal = withReactContent(Swal)
   const navigate = useNavigate()
   const [value, setValue] = useState({
     email: "",
@@ -32,9 +35,29 @@ function Register() {
     })
     .then(response => response.json())
     .then(data => {
-      localStorage.setItem('userLogin', value.email)
-          localStorage.setItem('userLoginID', data?.id)
-          navigate('/')
+      MySwal.fire({
+        title: <strong>Register Berhasil</strong>,
+        html: <i>{data.email}</i>,
+        icon: 'success'
+      }).then(() => {
+        localStorage.setItem('userLogin', JSON.stringify(data))
+        navigate('/products')
+        return
+      })
+      // MySwal.fire({
+      //   title: <p>Hello World</p>,
+      //   footer: 'Copyright 2018',
+      //   didOpen: () => {
+      //     // `MySwal` is a subclass of `Swal`
+      //     //   with all the same instance & static methods
+      //     MySwal.clickConfirm()
+      //   }
+      // }).then(() => {
+      //   MySwal.fire(<p>Shorthand works too</p>)
+      //   localStorage.setItem('userLogin', value.email)
+      //   navigate('/')
+      //   return
+      // })
     })
     .catch(err => console.log(err))
   }

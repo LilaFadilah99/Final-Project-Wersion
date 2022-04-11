@@ -4,9 +4,11 @@ import '../login/Login.css'
 // import LoginPict from '../../assets/Login/login.png'
 import LoginPict from '../../assets/Home/hero-bg.png'
 import { useNavigate, useLocation } from 'react-router-dom'
-
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 
 function Login() {
+    const MySwal = withReactContent(Swal)
     const navigate = useNavigate()
     const [value, setValue] = useState ({
         email: "",
@@ -30,18 +32,21 @@ function Login() {
         .then(data => {
             const isUser = data?.find(user => (user?.email === value.email) && (user?.password === value.password))
                 if (isUser) {
-                    console.log('login berhasil')
-                    
-                    localStorage.setItem("user", JSON.stringify(isUser))
-                    const fromLocation = stateLocation?.from?.pathname
-                if (fromLocation) {
-                    navigate(fromLocation)
-                    
-                }else {
-                    navigate('/')
-                }
+                    MySwal.fire({
+                        title: <strong>Login Berhasil</strong>,
+                        html: <i>Anda akan di arahkan ke halaman product.....</i>,
+                        icon: 'success'
+                    }).then(() => {
+                        localStorage.setItem("userLogin", JSON.stringify(isUser))
+                        navigate('/products')
+                        return
+                    })
                 } else {
-                    console.log('login gagal')
+                    MySwal.fire({
+                        title: <strong>Email atau Password Salah !!</strong>,
+                        html: <i>Silahkan coba lagi !</i>,
+                        icon: 'error'
+                    })
                 }   
         })
         .catch(err => console.log(err))

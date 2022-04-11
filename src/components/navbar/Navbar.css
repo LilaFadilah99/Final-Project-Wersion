@@ -13,6 +13,21 @@
     #navButton:hover {
     background-color: #f3950d;
     }
+
+#navLogout {
+    width: 100px;
+    height: 40px;
+    border: none;
+    margin: 10px;
+    border-radius: 30px;
+    background-color: #FF8080;
+    transition: 0.3s ease;
+    cursor: pointer;
+    }
+    
+    #navLogout:hover {
+    background-color: #FD5D5D;
+    }    
   
     #navbarNav a {
       color: black;
