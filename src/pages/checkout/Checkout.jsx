@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import './Checkout.css';
 import Navbar from '../../components/navbar/Navbar'
-import { useNavigate, useLocation } from 'react-router-dom'
-import CheckoutPict from '../../assets/Checkout/checkout.avif'
+import { useNavigate } from 'react-router-dom'
+// import CheckoutPict from '../../assets/Checkout/checkout.avif'
 import DetailContack from '../../components/detailContack/DetailContack'
 import Footer from '../../components/footer/Footer'
 import { useParams } from 'react-router-dom'
