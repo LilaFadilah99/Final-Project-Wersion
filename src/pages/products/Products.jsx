@@ -55,7 +55,7 @@ function Products() {
       <Navbar/>
        {/* Search Bar */}
        <section id='seacrhBar'>
-        <div className="container-fluid pt-5 pb-3">
+        <div className="container-fluid pt-5 pb-3" style={{backgroundColor: "#f3f6f9"}}>
           <div className="container">
             <div className="row justify-content-end">
               <div className="col-md-4 col-12">
