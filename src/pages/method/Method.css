@@ -75,3 +75,9 @@
   #methodButton5:hover {
     background-color: #f3950d;
   }
+
+  #method img {
+    width: 600px;
+    height: auto;
+    padding-top: 30px;
+  }

@@ -1,10 +1,15 @@
 import React from 'react'
 import './Method.css'
 import Navbar from '../../components/navbar/Navbar'
-import Trusted from '../../assets/Home/trusted.png'
+// import Trusted from '../../assets/Home/trusted.png'
 import Footer from '../../components/footer/Footer'
 import DetailContack from '../../components/detailContack/DetailContack'
 import { useNavigate } from 'react-router-dom'
+import Method1 from '../../assets/Method/method1.png'
+import Method2 from '../../assets/Method/method2.png'
+import Method3 from '../../assets/Method/method3.png'
+import Method4 from '../../assets/Method/method4.png'
+import Method5 from '../../assets/Method/method5.png'
 
 function Method() {
   let navigate = useNavigate();
@@ -12,15 +17,16 @@ function Method() {
     <>
     <Navbar/>
 
-   {/* Stage 1 */}
+    <section id='method'>
+         {/* Stage 1 */}
    <section id="stage1" className="banner_wrapper">
       <div className="container-fluid pt-md-5 pt-3">
         <div className="container">
           <div className="row flex-md-row-reverse align-items-center">
             <div className="col-md-6">
-              <img src={Trusted} alt="banner" className="img-fluid" />
+              <img src={Method1} alt="banner" className="img-fluid" />
             </div>
-            <div className="col-md-6 my-5 my-md-0 text-start text-md-start" id="heroDescription">
+            <div className="col-md-6 my-md-5 my-md-0 text-start text-md-start" id="heroDescription">
               <p>Stage 1</p>
               <h2>References</h2>
               <p>
@@ -40,9 +46,9 @@ function Method() {
         <div className="container">
           <div className="row flex-md-row-reverse align-items-center">
             <div className="col-md-6">
-              <img src={Trusted} alt="banner" className="img-fluid" />
+              <img src={Method2} alt="banner" className="img-fluid" />
             </div>
-            <div className="col-md-6 my-5 my-md-0 text-start text-md-start" id="heroDescription">
+            <div className="col-md-6 my-md-5 my-md-0 text-start text-md-start" id="heroDescription">
               <p>Stage 2</p>
               <h2>Design</h2>
               <p>
@@ -62,9 +68,9 @@ function Method() {
         <div className="container">
           <div className="row flex-md-row-reverse align-items-center">
             <div className="col-md-6">
-              <img src={Trusted} alt="banner" className="img-fluid" />
+              <img src={Method3} alt="banner" className="img-fluid" />
             </div>
-            <div className="col-md-6 my-5 my-md-0 text-start text-md-start" id="heroDescription">
+            <div className="col-md-6 my-md-5 my-md-0 text-start text-md-start" id="heroDescription">
               <p>Stage 3</p>
               <h2>
                 Development
@@ -86,9 +92,9 @@ function Method() {
         <div className="container">
           <div className="row flex-md-row-reverse align-items-center">
             <div className="col-md-6">
-              <img src={Trusted} alt="banner" className="img-fluid" />
+              <img src={Method4} alt="banner" className="img-fluid" />
             </div>
-            <div className="col-md-6 my-5 my-md-0 text-start text-md-start" id="heroDescription">
+            <div className="col-md-6 my-md-5 my-md-0 text-start text-md-start" id="heroDescription">
               <p>Stage 4</p>
               <h2>Content</h2>
               <p>
@@ -108,9 +114,9 @@ function Method() {
         <div className="container">
           <div className="row flex-md-row-reverse align-items-center">
             <div className="col-md-6">
-              <img src={Trusted} alt="banner" className="img-fluid" />
+              <img src={Method5} alt="banner" className="img-fluid" />
             </div>
-            <div className="col-md-6 my-5 my-md-0 text-start text-md-start" id="heroDescription">
+            <div className="col-md-6 my-md-5 my-md-0 text-start text-md-start" id="heroDescription">
               <p>Stage 5</p>
               <h2>Testing</h2>
               <p>
@@ -123,6 +129,7 @@ function Method() {
           </div>
         </div>
       </div>
+    </section>
     </section>
 
    <DetailContack/>

@@ -13,6 +13,7 @@ import ThankYou from './pages/thankYou/ThankYou';
 import BuyProducts from './pages/buyProducts/BuyProducts';
 import Loading from './pages/loading/Loading';
 import Checkout from './pages/checkout/Checkout';
+import GetInTouch from './pages/GetInTouch/GetInTouch';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/buy" element={<BuyProducts />} />
         <Route path="/loading" element={<Loading />} />
         <Route path="/checkout/:id" element={<Checkout />} />
+        <Route path="/touch" element={<GetInTouch />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
     </>

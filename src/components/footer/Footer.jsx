@@ -2,6 +2,7 @@ import React from 'react'
 import Logo from '../../assets/logo.png'
 import '../footer/Footer.css'
 import greatPict from '../../assets/Home/greatPict.png'
+import { Link } from "react-router-dom"
 
 function Footer() {
   return (
@@ -17,7 +18,7 @@ function Footer() {
             <div className="col-md-6 col-sm-12 ps-md-5 text-md-start mb-md-5 mt-">
               <h2>Let's make <br/> something great <br/> together.</h2>
               <p>Memulai pengalaman menjelajah bersama Wersion</p>
-              <a href=""><button id="greatButton" className="my-3">Start a project</button></a>
+              <Link to="/services"><button id="greatButton" className="my-3">Start a project</button></Link>
             </div>
           </div>
         </div>
@@ -56,42 +57,42 @@ function Footer() {
         </div>
         <div className="col-md-2 col-6">
           <p className="font-weight-bold">Services</p>
-          <a href="">Web Design</a> <br/>
-          <a href="">Web Development</a> <br/>
-          <a href="">Web Hosting</a> <br/>
-          <a href="">SEO</a> <br/>
-          <a href="">Check All Products</a>
+          <Link to="/services">Web Design</Link> <br/>
+          <Link to="/services">Web Development</Link> <br/>
+          <Link to="/services">Web Hosting</Link> <br/>
+          <Link to="/services">SEO</Link> <br/>
+          <Link to="/services">Check All Products</Link>
         </div>
         <div className="col-md-2 col-6">
-          <p className="font-weight-bold">Services</p>
-          <a href="">Web Design</a> <br/>
-          <a href="">Web Development</a> <br/>
-          <a href="">Web Hosting</a> <br/>
-          <a href="">SEO</a> <br/>
-          <a href="">Check All Products</a>
+          <p className="font-weight-bold">Products</p>
+          <Link to="/products">Desain</Link> <br/>
+          <Link to="/products">Copywriting</Link> <br/>
+          <Link to="/products">Content Writer</Link> <br/>
+          <Link to="/products">Admin Sosial Media</Link> <br/>
+          <Link to="/products">Riset Hastag</Link>
         </div>
         <div className="col-md-2 col-6 mt-5 mt-md-0 mt-lg-0 mt-xl-0 mt-xxl-0">
-          <p className="font-weight-bold">Services</p>
-          <a href="">Web Design</a> <br/>
-          <a href="">Web Development</a> <br/>
-          <a href="">Web Hosting</a> <br/>
-          <a href="">SEO</a> <br/>
-          <a href="">Check All Products</a>
+          <p className="font-weight-bold">Contack Us</p>
+          <Link to="/contact">WhatsApp</Link> <br/>
+          <Link to="/contact">Email</Link> <br/>
+          <Link to="/contact">Instagram</Link> <br/>
+          <Link to="/contact">Linkedin</Link> <br/>
+          <Link to="/contact">Youtube</Link>
         </div>
         <div className="col-md-2 col-6 mt-5 mt-md-0 mt-lg-0 mt-xl-0 mt-xxl-0">
-          <p className="font-weight-bold">Services</p>
-          <a href="">Web Design</a> <br/>
-          <a href="">Web Development</a> <br/>
-          <a href="">Web Hosting</a> <br/>
-          <a href="">SEO</a> <br/>
-          <a href="">Check All Products</a>
+          <p className="font-weight-bold">Support</p>
+          <Link to="/">What We Do</Link> <br/>
+          <Link to="/contact">Customers</Link> <br/>
+          <Link to="/services">Detail</Link> <br/>
+          <Link to="/method">Method</Link> <br/>
+          <Link to="/products">Price</Link>
         </div>
           </div>
           <div className="row text-center py-5" id="socialMedia">
             <div className="col-12">
-              <a href=""><i className="fa-brands fa-instagram"></i>&emsp;</a>
-              <a href=""><i className="fa-brands fa-linkedin"></i>&emsp;</a>
-              <a href=""><i className="fa-brands fa-twitter"></i>&emsp;</a>
+              <Link to="/contact"><i className="fa-brands fa-instagram"></i>&emsp;</Link>
+              <Link to="/contact"><i className="fa-brands fa-linkedin"></i>&emsp;</Link>
+              <Link to="/contact"><i className="fa-brands fa-twitter"></i>&emsp;</Link>
             </div>
           </div>
           <div className="row">

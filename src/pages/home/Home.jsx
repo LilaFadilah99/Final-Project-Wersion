@@ -26,6 +26,9 @@ import { useNavigate } from 'react-router-dom'
 import Profil1 from '../../assets/Home/profil1.png'
 import Profil2 from '../../assets/Home/profil2.png'
 import Profil3 from '../../assets/Home/profil3.png'
+import brand1 from '../../assets/Home/lenovo.png'
+import brand2 from '../../assets/Home/reebok.png'
+import DetailContack from '../../components/detailContack/DetailContack';
 
 function Home() {
   const [whyJoinUs, setWhyJoinUs] = useState([])
@@ -85,8 +88,8 @@ function Home() {
 <section id="brand" className="container d-flex justify-content-center">
   <div className="row " id="imageBrand">
     <img src={Redsbaby} alt="brand" className="img-fluid col-lg-2 col-md-4 col-4 py-5 pt-lg-0"/>
-    <img src={Redsbaby} alt="brand" className="img-fluid col-lg-2 col-md-4 col-4 py-5 pt-lg-0"/>
-    <img src={Redsbaby} alt="brand" className="img-fluid col-lg-2 col-md-4 col-4 py-5 pt-lg-0"/>
+    <img src={brand1} alt="brand" className="img-fluid col-lg-2 col-md-4 col-4 py-5 pt-lg-0"/>
+    <img src={brand2} alt="brand" className="img-fluid col-lg-2 col-md-4 col-4 py-5 pt-lg-0"/>
     <img src={LG} alt="brand" className="img-fluid col-lg-2 col-md-4 col-4 py-md-5 py-5 pt-lg-0"/>
     <img src={oriflame} alt="brand" className="img-fluid col-lg-2 col-md-4 col-4 py-md-5 py-5 pt-lg-0"/>
     <img src={zara} alt="brand" className="img-fluid col-lg-2 col-md-4 col-4 py-md-5 py-5 pt-lg-0"/>
@@ -314,6 +317,7 @@ function Home() {
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#25262b" fillOpacity="1" d="M0,288L120,272C240,256,480,224,720,229.3C960,235,1200,277,1320,298.7L1440,320L1440,0L1320,0C1200,0,960,0,720,0C480,0,240,0,120,0L0,0Z"></path></svg>
   </section>
       {/* End Fokus Kami */}
+      
 
       {/* Our Team */}
       <section id="ourTeam">
@@ -346,6 +350,7 @@ function Home() {
     </div>
   </section>
       {/* end Our Team */}
+      <DetailContack/>
       <Footer/>
     </>
   );

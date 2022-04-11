@@ -3,10 +3,10 @@ import '../contactUs/ContactUs.css'
 import Navbar from '../../components/navbar/Navbar'
 import DetailContack from '../../components/detailContack/DetailContack'
 import Footer from '../../components/footer/Footer'
-// import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function ContactUs() {
-  // let navigate = useNavigate();
+  let navigate = useNavigate();
   return (
     <>
     <Navbar/>
@@ -40,7 +40,7 @@ function ContactUs() {
               <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
               <div class="valid-feedback">Looks good!</div>
               <div class="invalid-feedback">Please choose a username.</div> <br />
-              <button id="heroButton" className="my-3" type="submit">Send Message</button>
+              <button id="heroButton" className="my-3" type="submit" onClick={() => {navigate ('/touch');}}>Send Message</button>
               </form>
             </div>
             {/* akhir row */}

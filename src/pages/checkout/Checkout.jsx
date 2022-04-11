@@ -107,28 +107,48 @@ function Checkout() {
         </div>
     </section>
     
-    {/* Form Checkout */}
-    <section id='formCheckout'>
-    <div className="container-fluid py-md-5">
-        <div className="container">
-            <div className="row py-md-5 py-3 ps-md-5 ps-2" style={{backgroundColor: "#EFEFEF"}}>
-                <div className="col-md-3 col-12">
-                <h3>Beli Sekarang!</h3>
-                </div>
-                <div className="col-md-4 col-12">
-                <div className="card">
-  <div className="card-body">
-    <h5 className="card-title">Card title</h5>
-    <h6 className="card-subtitle mb-2 text-muted">Card subtitle</h6>
-    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" className="card-link">Card link</a>
-    <a href="#" className="card-link">Another link</a>
-  </div>
-</div>         
-                </div>
+    {/* info Checkout */}
+    <section id='infoTitle'>
+      <div className="container-fluid pt-md-5 pt-3">
+        <div className="container py-md-4 py-3" style={{backgroundColor: '#DDDDDD'}}>
+          <div className="row">
+            <div className="col-12">
+              <h2 className='ps-5'>Proses Pengerjaan</h2>
             </div>
+          </div>
         </div>
-    </div>
+      </div>
+    </section>
+    {/* detail info */}
+    <section id='infoDetail'>
+      <div className="container-fluid py-3">
+        <div className="container py-md-5 py-3">
+          <div className="row justify-content-center">
+            <div className="col-md-5 col-12 mt-2">
+              <p>Stage 1</p>
+              <h3>References</h3>
+              <p>Wersion akan mengirimkan referensi web klien untuk memberikan gambaran arah sehingga kedua belah pihak berada di halaman yang sama dalam hal gaya.</p>
+            </div>
+            <div className="col-md-5 col-12 mt-2 offset-md-1">
+              <p>Stage 2</p>
+              <h3>Design</h3>
+              <p>Setelah klien puas dengan arah proyek, Wersion kemudian akan mulai merancang konsep berdasarkan referensi tersebut.</p>
+            </div>
+          </div>
+          <div className="row mt-md-5 justify-content-center">
+            <div className="col-md-5 col-12 mt-2">
+              <p>Stage 3</p>
+              <h3>Development</h3>
+              <p>Setelah desain ditandatangani oleh klien, Wersion kemudian akan mulai mengerjakan desain</p>
+            </div>
+            <div className="col-md-5 col-12 mt-2 offset-md-1">
+              <p>Stage 4</p>
+              <h3>Content</h3>
+              <p>Setelah konten dibuat, sekarang siap untuk dikirmkan kepada pelanggan.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <DetailContack/>
     <Footer/>
