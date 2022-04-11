@@ -14,3 +14,15 @@
   /* background-color: #F0F0F0 */
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
+
+/* @media (max-width: 767px) {
+  #seacrhBar input {
+  padding-right: 100px; 
+  margin-right: 500px;
+  padding-left: 100px;
+    }
+  #seacrhBar button {
+    margin-right: 500px;
+    }
+
+}  */

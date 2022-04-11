@@ -13,7 +13,11 @@ function Products() {
   const navigate = useNavigate()
   const [islogin, setIslogin] = useState(false)
   const [products, setProducts] = useState([])
+
   
+
+  const [query, setQuery] = useState("");
+
   async function fetchProducts() {
     fetch('https://pickled-capricious-beak.glitch.me/products')
     .then(response => response.json())
@@ -43,6 +47,7 @@ function Products() {
   useEffect(()=> {
     checkLogin()
   },[])
+
   
   if(islogin) {
     return (
@@ -79,6 +84,57 @@ function Products() {
                     new Intl.NumberFormat(['ban', 'id']).format(products.price)}</p>
                     <p style={{fontSize: "12px"}}>{products.ket}</p>
                   </div>
+
+  let navigate = useNavigate();
+  return (
+   <>
+    <Navbar/>
+     {/* Search Bar */}
+     <section id='seacrhBar'>
+      <div className="container-fluid pt-5 pb-3">
+        <div className="container">
+          <div className="row justify-content-end">
+            <div className="col-md-4 col-12">
+            <form className="d-flex">
+              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={(e) => setQuery(e.target.value)} style={{borderRadius: '30px'}}/>
+             <h6><i className="fa-solid fa-magnifying-glass pt-2"></i></h6>
+            </form>
+      
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section style={{backgroundColor: "#f3f6f9"}}>
+      {/* Title */}
+    <section id='Title'>
+    <div className="container-fluid py-5">
+      <div className="container">
+        <div className="row text-center">
+          <div className="col-12">
+            <h2>Paket Bergantung Pada Kebutuhan Anda</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+    </section>
+    {/* Products Card */}
+    <section id='productsCard'>
+      <div className="container-fluid">
+        <div className="container">
+          <div className="row justify-content-center ">
+          {
+            products.filter(products=>products.title.toString().toLowerCase().includes(query)).map(products => {
+              return <div className="mb-3 col-md-3 col-6" key={products.id} onClick={() => {navigate (`/checkout/${products.id}`);}} >
+              <div className="card h-100 rounded-2 shadow-sm poductsCard">
+                <div className="inner">
+                <img src={products.image} className="card-img-top" alt="paket 1" />
+                </div>
+                <div className="card-body">
+                  <p className="card-title fw-bold">{products.title}</p>
+                  <p className="card-text" style={{fontSize: "15px"}}>Rp. {products.price}</p>
+                  <p style={{fontSize: "12px"}}>{products.ket}</p>
+
                 </div>
               </div>
               })

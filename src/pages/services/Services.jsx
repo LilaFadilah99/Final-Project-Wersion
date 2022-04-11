@@ -9,6 +9,8 @@ import { useNavigate } from 'react-router-dom'
 
 function Services() {
   const [services, setServices] = useState([])
+  const [query, setQuery] = useState("");
+  
   async function fetchServices() {
     fetch('https://pickled-capricious-beak.glitch.me/product-description')
     .then(response => response.json())
@@ -22,6 +24,23 @@ function Services() {
   return (
     <>
     <Navbar/>
+    {/* Search Bar */}
+    <section id='seacrhBar'>
+      <div className="container-fluid pt-5 pb-3">
+        <div className="container">
+          <div className="row justify-content-end">
+            <div className="col-md-4 col-12">
+            <form className="d-flex">
+              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={(e) => setQuery(e.target.value)} style={{borderRadius: '30px'}}/>
+              <h6><i className="fa-solid fa-magnifying-glass pt-2"></i></h6>
+            </form>
+      
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
      {/* Title */}
      <section id='Title'>
     <div className="container-fluid py-5">
@@ -42,7 +61,7 @@ function Services() {
         {/* Row 1 */}
         <div className="row text-start">
           {
-            services.map(services => {
+            services.filter(services=>services.title.toString().toLowerCase().includes(query)).map(services => {
               return <div className="col-md-4 col-12 mt-2 px-md-5 column-1" key={services.id} >
               <button className='border-0 bg-transparent text-start' onClick={() => {navigate (`/detail/${services.id}`);}}>
                 <div className="inner">
@@ -66,3 +85,4 @@ function Services() {
   );
 }
 export default Services;
+
