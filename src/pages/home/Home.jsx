@@ -1,4 +1,6 @@
 import React, {useState, useEffect} from 'react';
+import {  useDispatch, useSelector } from 'react-redux'
+import { fetchWhyJoinUs } from '../../store/actions/users';
 import './Home.css';
 import Navbar from '../../components/navbar/Navbar'
 import Footer from '../../components/footer/Footer';
@@ -30,17 +32,21 @@ import brand1 from '../../assets/Home/lenovo.png'
 import brand2 from '../../assets/Home/reebok.png'
 import DetailContack from '../../components/detailContack/DetailContack';
 
+
 function Home() {
-  const [whyJoinUs, setWhyJoinUs] = useState([])
-  async function fetchWhyJoinUs() {
-    fetch('https://pickled-capricious-beak.glitch.me/join')
-    .then(response => response.json())
-    .then(data => setWhyJoinUs(data))
-    .catch(err => console.log(err))
-  }
+  // const [whyJoinUs, setWhyJoinUs] = useState([])
+  // async function fetchWhyJoinUs() {
+  //   fetch('https://pickled-capricious-beak.glitch.me/join')
+  //   .then(response => response.json())
+  //   .then(data => setWhyJoinUs(data))
+  //   .catch(err => console.log(err))
+  // }
+
+  const dispatch = useDispatch()
+  const { whyJoinUs } = useSelector(state => state.userReducer)
 
   useEffect(() => {
-    fetchWhyJoinUs()
+    dispatch (fetchWhyJoinUs())
   },[])
 
   let navigate = useNavigate();
