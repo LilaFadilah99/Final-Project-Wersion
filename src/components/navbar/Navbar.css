@@ -35,3 +35,10 @@
     #navbarNav a:hover {
       color: #fdba12;
     }
+
+  #navbarNav ul {
+    margin: 1 rem;
+    justify-content: flex-end;
+    align-items: flex-end;
+    text-align: right;
+  }

@@ -335,17 +335,17 @@ function Home() {
           </div>
         </div>
         <div className="row d py-5">
-          <div className="col-md-4 col-6 text-center">
+          <div className="col-md-4 col-12 text-center">
             <img src={Profil1} alt="" className="mb-3"/>
             <h3>Lila Fadilah</h3>
             <p>Co-Founder & Web Developer</p>
           </div>
-          <div className="col-md-4 col-6 text-center">
+          <div className="col-md-4 col-12 text-center">
             <img src={Profil2} alt="" className="mb-3"/>
             <h3>Zuhriatul Aini</h3>
             <p>Brand Designer</p>
           </div>
-          <div className="col-md-4 col-6 text-center">
+          <div className="col-md-4 col-12 text-center">
             <img src={Profil3} alt="" className="mb-3"/>
             <h3>Ella Gia Dewi</h3>
             <p>Accounts & Finance</p>
