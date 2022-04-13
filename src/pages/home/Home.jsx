@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useEffect} from 'react';
 import {  useDispatch, useSelector } from 'react-redux'
 import { fetchWhyJoinUs } from '../../store/actions/users';
 import './Home.css';
@@ -47,7 +47,7 @@ function Home() {
 
   useEffect(() => {
     dispatch (fetchWhyJoinUs())
-  },[])
+  },[dispatch])
 
   let navigate = useNavigate();
   return (

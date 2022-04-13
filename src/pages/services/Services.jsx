@@ -1,4 +1,7 @@
-import React, {useState, useEffect} from 'react';
+// import React, {useState, useEffect} from 'react';
+import React, { useEffect, useState} from 'react';
+import {  useDispatch, useSelector } from 'react-redux'
+import { fetchServices } from '../../store/actions/users';
 import '../../pages/services/Services.css'
 import Navbar from '../../components/navbar/Navbar'
 // import Service1 from '../../assets/Service/service1.jpg'
@@ -8,18 +11,26 @@ import { useNavigate } from 'react-router-dom'
 
 
 function Services() {
-  const [services, setServices] = useState([])
+  // const [services, setServices] = useState([])
   const [query, setQuery] = useState("");
   
-  async function fetchServices() {
-    fetch('https://pickled-capricious-beak.glitch.me/product-description')
-    .then(response => response.json())
-    .then(data => setServices(data))
-    .catch(err => console.log(err))
-  }
-   useEffect(() => {
-     fetchServices()
-   },[])
+  // async function fetchServices() {
+  //   fetch('https://pickled-capricious-beak.glitch.me/product-description')
+  //   .then(response => response.json())
+  //   .then(data => setServices(data))
+  //   .catch(err => console.log(err))
+  // }
+  //  useEffect(() => {
+  //    fetchServices()
+  //  },[])
+
+  const dispatch = useDispatch()
+  const { services } = useSelector(state => state.servisesReducer)
+
+  useEffect(() => {
+    dispatch (fetchServices())
+  },[dispatch])
+
   let navigate = useNavigate();
   return (
     <>
